@@ -3,6 +3,7 @@ module sprout
 go 1.19
 
 require (
+	github.com/duke-git/lancet/v2 v2.3.4
 	github.com/gin-gonic/gin v1.10.0
 	github.com/tidwall/gjson v1.18.0
 	gorm.io/driver/mysql v1.5.7
@@ -36,6 +37,7 @@ require (
 	github.com/ugorji/go/codec v1.2.12 // indirect
 	golang.org/x/arch v0.8.0 // indirect
 	golang.org/x/crypto v0.23.0 // indirect
+	golang.org/x/exp v0.0.0-20221208152030-732eee02a75a // indirect
 	golang.org/x/net v0.25.0 // indirect
 	golang.org/x/sys v0.20.0 // indirect
 	golang.org/x/text v0.15.0 // indirect

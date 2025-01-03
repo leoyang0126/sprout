@@ -3,6 +3,7 @@ package main
 import (
 	"sprout/api"
 	"sprout/app"
+	"sprout/utils"
 )
 
 type Book struct {
@@ -28,6 +29,7 @@ func main() {
 	//	testAclass.Login("张三", "sss")
 	//}
 	//utils.ArrayUnit()
+	utils.Test()
 	testAclass.TestStr()
 	api.Start()
 }

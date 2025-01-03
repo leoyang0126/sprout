@@ -2,6 +2,10 @@ package utils
 
 import (
 	"fmt"
+	"github.com/duke-git/lancet/v2/convertor"
+	"github.com/duke-git/lancet/v2/stream"
+	"github.com/duke-git/lancet/v2/strutil"
+	"log"
 	"reflect"
 )
 
@@ -54,4 +58,31 @@ func DeepCopy(source interface{}) interface{} {
 	}
 
 	return newValue.Interface()
+}
+
+type UserInfoDto struct {
+	AdAccount string
+	WorkCode  string
+	Nickname  string
+}
+
+func Test() {
+
+	str := "aaa,bb,cc"
+	log.Println("分割：", strutil.SplitAndTrim(str, ","))
+	arr := []string{"a", "cc", "ddd"}
+	t := stream.FromSlice(arr).Filter(func(item string) bool {
+		return len(item) > 1
+	})
+	useDto := new(UserInfoDto)
+	use := new(UserInfo) //{"a", "b", "c"}
+	use.Nickname = "a"
+	use.WorkCode = "b"
+	fmt.Printf("%T", useDto)
+	fmt.Println("-----")
+	fmt.Printf("%T", str)
+	fmt.Println("-----")
+	convertor.CopyProperties(useDto, use)
+	log.Println("copy测试：", *useDto)
+	log.Println("流测试：", t)
 }
